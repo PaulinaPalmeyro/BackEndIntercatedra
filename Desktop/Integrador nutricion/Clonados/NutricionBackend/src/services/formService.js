@@ -1,12 +1,12 @@
-const FormData = require('../models/formData');
+const FormDataFactory = require('../factories/formDataFactory');
 
 const createFormData = async (data) => {
-  const formData = new FormData(data);
+  const formData = FormDataFactory.create(data);
   return await formData.save();
 };
 
 const getAllFormData = async () => {
-  return await FormData.find();
+  return await FormDataFactory.getAll();
 };
 
 module.exports = {
